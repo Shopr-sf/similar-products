@@ -1,3 +1,3 @@
 module.exports = {
-    "extends": ["airbnb", "plugin:react/recommended"]
+	extends: ['airbnb', 'plugin:react/recommended'],
 };
