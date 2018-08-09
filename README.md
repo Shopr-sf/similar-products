@@ -28,7 +28,7 @@ An `nvmrc` file is included if using [nvm](https://github.com/creationix/nvm).
 
 ## Development
 
-##CRUD API
+## CRUD API
 
 - /products/:id/add (POST)
 - creates a new item record and returns modification results from the database
