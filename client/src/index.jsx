@@ -25,7 +25,7 @@ class App extends React.Component {
     this.getProducts();
   }
 
-  getProducts() {
+  getProducts(id) {
     const self = this;
     axios
       .get('/products')

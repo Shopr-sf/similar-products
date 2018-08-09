@@ -7,33 +7,33 @@ const app = express();
 const port = 3001;
 
 const con = mysql.createConnection({
-  user: 'root',
-  password: '',
-  database: 'similarProducts',
+	user: 'root',
+	password: '',
+	database: 'similarProducts',
 });
 
 app.use(bodyParser.json());
-app.use(express.static('client'));
+app.use('/products/:id', express.static('client'));
 
-app.get('/products', (req, res) => {
-  con.connect((err) => {
-    if (err) {
-      console.log('Error connecting to MySql');
-      return;
-    }
-    console.log('Connected to database');
-  });
+app.get('/products', function(req, res) {
+	con.connect(err => {
+		if (err) {
+			console.log('Error connecting to MySql');
+			return;
+		}
+		console.log('Connected to database');
+	});
 
-  const query = 'SELECT * FROM products';
+	var query = 'SELECT * FROM products';
 
-  con.query(query, (err, result) => {
-    if (err) {
-      console.log(err);
-    } else {
-      console.log('Query successful');
-      res.send(result);
-    }
-  });
+	con.query(query, function(err, result) {
+		if (err) {
+			console.log(err);
+		} else {
+			console.log('Query successful');
+			res.send(result);
+		}
+	});
 });
 
 app.get('/:id', function(req, res) {});
