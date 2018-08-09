@@ -30,8 +30,10 @@ An `nvmrc` file is included if using [nvm](https://github.com/creationix/nvm).
 
 ## CRUD API
 
-- /products/:id/add (POST)
+- /products/add (POST)
 - creates a new item record and returns modification results from the database
+- /products/:id (GET)
+  - serves the page of the product with id
 - /products/:id/related (GET)
 - returns the similar products of the Product with ID id.
 - /products/:id/update (PUT)
